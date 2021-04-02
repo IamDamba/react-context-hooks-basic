@@ -1,20 +1,19 @@
 import React from "react";
 import Navbar from "./components/layout/Navbar";
 import Booklist from "./components/booklist/Booklist";
-import ThemeToogle from "./components/themeToogle/ThemeToogle";
-import ThemeContextProvider from "./components/contexts/ThemeContext";
-import AuthContextProvider from "./components/contexts/AuthContext";
+import BookContextProvider from "./components/contexts/BookContext";
+
+import './pages/css/app.css';
+import BookForm from "./components/bookform/BookForm";
 
 const App = () => {
   return (
-    <div className="App">
-      <ThemeContextProvider>
-        <AuthContextProvider>
-          <Navbar />
-          <Booklist />
-          <ThemeToogle />
-        </AuthContextProvider>
-      </ThemeContextProvider>
+    <div className="app">
+      <BookContextProvider>
+        <Navbar />
+        <Booklist/>
+        <BookForm/>
+      </BookContextProvider>
     </div>
   );
 };
